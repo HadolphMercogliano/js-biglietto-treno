@@ -7,21 +7,49 @@
 
 // SVOLGIMENTO
 // DICHIARAZIONE VARIABILI
-let kilometri = parseInt(kilometri);
-let age = parseInt(age);
 const pricePerKm = 0.21;
-let totalPrice = (0.21 * kilometri)
-const discount20 = ((-totalPrice * 20 / 100) + totalPrice);
-const discount40 = ((-totalPrice * 40 / 100) + totalPrice);
+
+// let kilometri = parseInt(kilometri);
+// let age = parseInt(age);
+
 
 
 
 // 1.CHIEDI ALL' UTENTE QUANTIN CHILOMETRI VUOLE PERCORRERE
+let kilometri = parseInt(prompt('quanti kilometri vuoi percorrere?'));
+console.log('kilometri' + kilometri);
 
 // 2.CHIEDI L'ETà DEL PASSEGGERO
+let age = parseInt(prompt('quanti anni hai?'));
+console.log('anni' + age);
 
-// 3.SE IL PASSEGGERO HA MENO DI 18 ANNI IL BIGLIETTO è SCONTATO DEL 20%
+// 3.CALCOLA IL PREZZO TOTALE
+let totalPrice = (0.21 * kilometri)
+console.log('prezzo maggiorenni under65: 655' + totalPrice);
 
-// 4.SE IL PASSEGGERO HA 65 ANNI O PIU' IL BIGLIETTO è SCONTATO DEL 40%
+// PREZZO UNDER 18
+let PriceDiscount20 = (totalPrice - (totalPrice * 20 / 100));
+console.log('prezzo scontato under18: ' + PriceDiscount20);
 
-// 5. SCRIVI L'OUTPUT DEL PREZZO CON 2 CIFRE DECIMALI
+// PREZZO OVER 65
+let PriceDiscount40 = (totalPrice - (totalPrice * 40 / 100));
+console.log('prezzo scontato over65: ' + PriceDiscount40);
+
+// 4.SE IL PASSEGGERO HA MENO DI 18 ANNI IL BIGLIETTO è SCONTATO DEL 20%
+if (age < 18) {
+    document.getElementById('final_price').innerHTML = "Il prezzo del tuo biglietto è di € " + PriceDiscount20.toFixed(2) + "grazie allo sconto UNDER18";
+}
+
+// 5.SE IL PASSEGGERO HA 65 ANNI O PIU' IL BIGLIETTO è SCONTATO DEL 40%
+else if (age >= 65) {
+    document.getElementById('final_price').innerHTML = "Il prezzo del tuo biglietto è di € " + PriceDiscount40.toFixed(2) + "grazie allo sconto over65";
+}
+else {
+    document.getElementById('final_price').innerHTML = "Il prezzo del tuo biglietto è di € " + totalPrice.toFixed(2);
+
+}
+
+
+
+
+
