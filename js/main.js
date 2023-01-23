@@ -6,6 +6,15 @@
 // L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 // SVOLGIMENTO
+// DICHIARAZIONE VARIABILI
+let kilometri = parseInt(kilometri);
+let age = parseInt(age);
+const pricePerKm = 0.21;
+let totalPrice = (0.21 * kilometri)
+const discount20 = ((-totalPrice * 20 / 100) + totalPrice);
+const discount40 = ((-totalPrice * 40 / 100) + totalPrice);
+
+
 
 // 1.CHIEDI ALL' UTENTE QUANTIN CHILOMETRI VUOLE PERCORRERE
 
